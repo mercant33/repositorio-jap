@@ -13,31 +13,10 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
-
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
-  </style>
+  <link href="css/login.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<!-- <body class="text-center">
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -49,5 +28,35 @@
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+</body> -->
+
+<body>
+  <div class="contenedor">
+    <img src="img/login.png" id="imagen" alt="Login eMercado">
+    <h1>Iniciar sesión</h1>
+    <form id="loginForm">
+      <label for="inputEmail">Usuario</label>
+      <input type="email" class="inp" id="email" placeholder="Ingrese su correo electrónico" required autofocus>
+
+      <label for="inputPassword">Contraseña</label>
+      <input type="password" class="inp" id="password" placeholder="Escriba su contraseña" minlength="4" required>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Recuérdame
+        </label>
+      </div>
+
+      <button id="submitBtn" type="button"> Ingresar</button>
+      <a href="">¿Has perdido tu contraseña?</a></br>
+      <a href="">¿No estás registrado?</a></br></br>
+      <p>©Jóvenes a Programar 2020 by /mercant.33</p>
+    </form>
+  </div>
 </body>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/login.js"></script>
+<script src="js/authCheck.js"></script>
 </html>
