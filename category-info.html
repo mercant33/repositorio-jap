@@ -23,6 +23,12 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <!-- Se agrega botón con identificador de usuario y opción de cerrar la sesión -->
+      <a class="nav-link dropdown-toggle" href="#" id="usuarioLocal" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"></a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#" onclick="cerrar()">Cerrar sesión</a>
+      </div>
     </div>
   </nav>
   <main role="main">
@@ -81,6 +87,16 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/category-info.js"></script>
+  <!-- Función para limpiar localStorage -->
+  <script>
+    function cerrar() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("password");
+      location.href = "login.html";
+    }
+    // function userNav (){
+    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("user");
+  </script>
 </body>
 
 </html>
