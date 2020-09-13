@@ -32,7 +32,7 @@ function sortProducts(criteria, array){
             return 0;
         });
     }
-// E2 -En líneas 27 y 28 se hizo referencia a soldCount, para poder ordenar artículos por relevancia.
+// E1 -En líneas 27 y 28 se hizo referencia a soldCount, para poder ordenar artículos por relevancia.
     return result;
 }
 
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         showProductsList();
     });
 });
-// E2 - Función para realizar la búsqueda
+
 const busqueda= ()=>{
     texto = busquedaFiltrado.value.toLowerCase();
     showProductsList();
