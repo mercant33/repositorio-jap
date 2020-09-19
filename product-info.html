@@ -20,9 +20,11 @@
       display: flex;
       align-items: center;
     }
+
     #localComment {
       font-weight: bold;
     }
+
     .checked {
       color: orange;
     }
@@ -37,11 +39,12 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <!-- Se agrega botón con identificador de usuario y opción de cerrar la sesión -->
+      <!-- E4 - Se adecuó el menú despegable, el que contiene acceso al carrito, perfil y cerrar sesión -->
       <a class="nav-link dropdown-toggle" href="#" id="usuarioLocal" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false"></a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="cart.html">Mi carrito</a>
+        <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
         <a class="dropdown-item" href="#" onclick="cerrar()">Cerrar sesión</a>
       </div>
     </div>
@@ -50,14 +53,15 @@
   <!-- E3 - Path-->
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-12"> <a href="categories.html">Categorías</a> &GT <a href="category-info.html">Autos</a> &GT <a href="product-info.html">Chevrolet</a>
+      <div class="col-md-12"> <a href="categories.html">Categorías</a> &GT <a href="category-info.html">Autos</a> &GT <a
+          href="product-info.html">Chevrolet</a>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="row">
-      <!-- E3 - Carrousel -->
+      <!-- E4 Desafiate - Carrousel -->
       <div class="col-md-6" id="carro">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -123,7 +127,7 @@
   </div>
   <hr>
 
-  <!-- E3 - Productos relacionados -->
+  <!-- E4 - Productos relacionados -->
   <div class="container mt-5">
     <!-- <div class=""> -->
     <h3>Productos relacionados</h3>
