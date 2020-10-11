@@ -75,6 +75,12 @@ function showComments(array) {
     }
   }
 
+  //E5 - Redirección al carrito
+  document.getElementById('carrito').addEventListener('click', addCart);
+  function addCart() {
+    location.href = "cart.html";
+  }
+  
   // E3 - Se crean las nuevas etiquetas y se asignan id y estilos
   if(localStorage.getItem('score') !== null) {
   var userComment = document.createElement('h6');
