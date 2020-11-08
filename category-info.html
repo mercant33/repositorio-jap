@@ -88,15 +88,15 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/category-info.js"></script>
+  <script src="js/authCheck.js"></script>
   <!-- Función para limpiar localStorage -->
   <script>
     function cerrar() {
-      localStorage.removeItem("user");
-      localStorage.removeItem("password");
+      localStorage.removeItem('correo');
       location.href = "login.html";
     }
     // function userNav (){
-    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("user");
+    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("correo");
   </script>
 </body>
 

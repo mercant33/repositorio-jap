@@ -22,19 +22,19 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
- <!-- E4 - Se adecuó el menú despegable, el que contiene acceso al carrito, perfil y cerrar sesión -->
- <a class="nav-link dropdown-toggle" href="#" id="usuarioLocal" role="button" data-toggle="dropdown"
- aria-haspopup="true" aria-expanded="false"></a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
- <a class="dropdown-item" href="cart.html">Mi carrito</a>
- <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
- <a class="dropdown-item" href="#" onclick="cerrar()">Cerrar sesión</a>
-</div>
+      <!-- E4 - Se adecuó el menú despegable, el que contiene acceso al carrito, perfil y cerrar sesión -->
+      <a class="nav-link dropdown-toggle" href="#" id="usuarioLocal" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"></a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="cart.html">Mi carrito</a>
+        <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+        <a class="dropdown-item" href="#" onclick="cerrar()">Cerrar sesión</a>
+      </div>
       <!-- E2 - Se agrega campo de búsqueda de productos -->
-      <form class="form-inline my-2 my-lg-0">
+      <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" id="busquedaFiltrado" placeholder="busque su producto">
         <button class="btn btn-light btn-sm" type="submit">Buscar</button>
-      </form>
+      </form> -->
     </div>
   </nav>
 
@@ -63,8 +63,14 @@
         </div>
       </div>
 
-      <div class="row justify-content-end">
-        <div class="col-md-6"></div>
+      <!-- E7 Se reubicó la barra de búsqueda -->
+      <div class="row">
+        <div class="col-md-6">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" id="busquedaFiltrado" placeholder="Busque su producto">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+          </form>
+        </div>
         <div class="col-md-6 col-sm-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
@@ -79,19 +85,20 @@
             </div>
             <div class="col-3 p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-primary" id="rangeFilterCount">Filtrar</button>
                 <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Se creó div para mostrar los valores contenidos en Json -->
-      <div class="row">
-        <div class="list-group" id="cat-list-container">
-        </div>
-      </div>
 
+      </div>
+<!-- E7 Responsive design-->
+
+    <div class="container">
+      <div class="row" id="cat-list-container">
+      </div>
     </div>
   </main>
 
@@ -117,15 +124,15 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/authCheck.js"></script>
   <!-- E1 - Función para limpiar localStorage -->
   <script>
     function cerrar() {
-      localStorage.removeItem("user");
-      localStorage.removeItem("password");
+      localStorage.removeItem('correo');
       location.href = "login.html";
     }
     // function userNav (){
-    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("user");
+    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("correo");
   </script>
 </body>
 

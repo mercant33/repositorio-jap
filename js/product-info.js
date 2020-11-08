@@ -102,7 +102,7 @@ function showComments(array) {
   document.getElementById('nuevoComentario').appendChild(textComment);
 
   // E3 - Se obtienen los nuevos id, y se escribe la información a mostrarse
-  document.getElementById('usuarioSpan').innerHTML = localStorage.getItem('user');
+  document.getElementById('usuarioSpan').innerHTML = localStorage.getItem('correo');
   document.getElementById('usuario').innerHTML += ' ' + localStorage.getItem('date');
   document.getElementById('devolucion').innerHTML = localStorage.getItem('newComment');
 

@@ -49,14 +49,139 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container">
+    <div class="text-center p-4">
+      <h2>Mi Perfil</h2>
+      <p class="lead">Aquí podrá ver y modificar su información de usuario</p>
     </div>
   </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <h4>Foto de perfil</h4>
+        <img id="imagenPerfil" src="" class="avatar img-thumbnail rounded-circle" alt="foto de usuario">
+        <small class="text-muted">Cambiar foto de perfil</small> </br>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#confirmarFoto">Cargar</button>
+      </div>
+
+      <div class="col-md-9">
+        <h4>Información personal</h4>
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Nombre completo</h6>
+              </div>
+              <div id="nombreCompleto" class="col-sm-9 text-secondary">
+
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Edad</h6>
+              </div>
+              <div id="edad" class="col-sm-9 text-secondary">
+
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div id="email" class="col-sm-9 text-secondary">
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Phone</h6>
+              </div>
+              <div id="telefono" class="col-sm-9 text-secondary">
+              </div>
+            </div>
+            <hr>
+
+          </div>
+        </div>
+        <button type="button" class="m-1 btn btn-link float-right" data-toggle="modal" data-target="#editarPerfil">Editar perfil</button>
+
+      </div>
+    </div>
+  </div>
+
+<!-- E7 - Modal para datos -->
+<div class="modal fade" id="editarPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar información de usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="inputsUsuario">
+          <div class="custom-control custom-radio">
+           
+            <div class="row">
+              <div class="col-12">
+                <label for="nombresyApellidos">Nombres y Apellidos</label>
+                <input class="form-control form-control-rounded" type="text" id="nombresyApellidosInput" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <label for="edad">Edad</label>
+                <input class="form-control form-control-rounded" type="number" id="edadInput" min="18" required>
+              </div>
+
+              <div class="col-9">
+                <label for="telefono">Teléfono</label>
+                <input class="form-control form-control-rounded" type="number" id="telefonoInput" min="2" required>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarInfo" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" id="actualizarInfo" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- E7 Modal para imagen -->
+<div class="modal fade" id="confirmarFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cambiar foto de usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Desea subir la fotografía que posee almacenada en borrador?
+      </div>
+      <div class="d-flex justify-content-center">
+        <img class="avatar img-thumbnail" width="150" src="https://i.ibb.co/Bnd2YLX/jsLogo.png" alt="Fotografía de borrador">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" id="imagenInput" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
@@ -80,16 +205,16 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
+  <script src="js/my-profile.js"></script>
+  <script src="js/authCheck.js"></script>
   <!-- Función para limpiar localStorage -->
   <script>
     function cerrar() {
-      localStorage.removeItem("user");
-      localStorage.removeItem("password");
+      localStorage.removeItem('correo');
       location.href = "login.html";
     }
     // function userNav (){
-    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("user");
+    document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("correo");
   </script>
 </body>
 

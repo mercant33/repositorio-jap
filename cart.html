@@ -127,13 +127,13 @@
           <!-- E6 - Popup -->
           <h4 class="mb-3">Método de pago</h4>
           <div class="row">
-            <p id="metodoElecto"></p>
+            <div id="metodoElecto"></div>
             <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#paymentOptions">Seleccione
               su método</button>
           </div>
           <hr class="mb-4">
 
-          <h4 class="mb-3">Costos</h4>
+          <h4 id="cuatro" class="mb-3">Costos</h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
@@ -270,15 +270,15 @@
     <script src="js/dropzone.js"></script>
     <script src="js/init.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/authCheck.js"></script>
     <!-- Función para limpiar localStorage -->
     <script>
-      function cerrar() {
-        localStorage.removeItem("user");
-        localStorage.removeItem("password");
-        location.href = "login.html";
-      }
+    function cerrar() {
+      localStorage.removeItem('correo');
+      location.href = "login.html";
+    }
       // function userNav (){
-      document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("user");
+      document.getElementById("usuarioLocal").innerHTML = localStorage.getItem("correo");
     </script>
 </body>
 

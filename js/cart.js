@@ -119,6 +119,7 @@ var metodoTarjeta = function(e) {
         e.preventDefault();
     } else {
         alert("Su pago se realizará mediante tarjeta bancaria");
+        $('#paymentOptions').modal('hide');
         document.getElementById('metodoElecto').innerHTML = "Método Tarjeta Bancaria";
 
     }
@@ -130,6 +131,7 @@ var metodoBancario = function(e) {
         e.preventDefault();
     } else {
         alert("Su pago se realizará mediante transferencia bancaria");
+        $('#paymentOptions').modal('hide');
         document.getElementById('metodoElecto').innerHTML = "Método Bancario";
     }
 }
@@ -150,7 +152,7 @@ document.getElementById('finalizarCompra').addEventListener('click', finishBuy);
       var street = document.getElementById('calle').value;
       var number = document.getElementById('numeroCalle').value;
       var corner = document.getElementById('esquina').value;
-      var metodo = document.getElementById('metodoElecto').value;
+      var metodo = document.getElementById('metodoElecto').innerHTML;
 
       if ( street.length >= 2 && number !== "" && corner.length >= 2 && metodo !== "") {
         alert(buyOk);
